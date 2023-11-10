@@ -1,0 +1,33 @@
+body{
+	background-color: #000000; 
+	font-family: verdana;
+	color: #ffffff;
+	font-size: 12px;
+}
+.mensagem{
+	width: 300px;
+	height: 60px;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #0193cf;
+    float: left;
+    left: 47%;
+    margin: -40px -150px;
+    position: absolute;
+    text-align: center;
+    top: 44%;	
+}
+.image{
+	width: 300px;
+	height: 110px;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #000405;
+    float: left;
+    left: 47%;
+    margin: -40px -150px;
+    position: absolute;
+    text-align: center;
+    top: 10%;	
+}
+
