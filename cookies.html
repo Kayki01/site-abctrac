@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #cookieBanner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #cookieBanner button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Exemplo de Aceitação de Cookies</title>
+</head>
+<body>
+
+    <div id="cookieBanner">
+        Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
+        <button onclick="aceitarCookies()">Aceitar</button>
+    </div>
+
+    <script>
+        // Função para definir um cookie de aceitação
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        // Função para ocultar a barra de cookies e definir o cookie de aceitação
+        function aceitarCookies() {
+            document.getElementById("cookieBanner").style.display = "none";
+            setCookie("cookieAceito", "true", 365); // O cookie é válido por 365 dias
+        }
+
+        // Verificar se o cookie de aceitação já está definido
+        function verificaCookieAceito() {
+            var cookieAceito = getCookie("cookieAceito");
+            if (!cookieAceito || cookieAceito !== "true") {
+                document.getElementById("cookieBanner").style.display = "block";
+            }
+        }
+
+        // Função para obter o valor de um cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Executar a verificação ao carregar a página
+        verificaCookieAceito();
+    </script>
+
+</body>
+</html>

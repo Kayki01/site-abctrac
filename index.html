@@ -10,6 +10,28 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,500">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    #cookieBanner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #cookieBanner button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
     .ie-panel {
       display: none;
       background: #212121;
@@ -25,7 +47,9 @@
     html.lt-ie-10 .ie-panel {
       display: block;
     }
+    
   </style>
+  
 </head>
 
 <body>
@@ -124,7 +148,7 @@
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link"
                               href="../uso-pessoal/produto.html">Autotrac One Carro</a>
                           </li>
-                         <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
+                          <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
                               produto</a>
                           </li>
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
@@ -133,7 +157,7 @@
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
                               produto</a>
                           </li>-->
-                        </ul> 
+                        </ul>
                         <!--lista da linha ONE final-->
                   <li class="rd-nav-item"><a class="rd-nav-link" href="">Serviços Autotrac</a>
                     <ul class="rd-menu rd-navbar-dropdown">
@@ -249,7 +273,7 @@
             <div class="box-default-text">Monitore sua frota equipada com produtos Autotrac a partir do seu smartphone
               ou Tablet, Monitore sua frota equipada com produtos Autotrac a partir do seu smartphone ou Tablet, Sua
               carga com inteligência própria. Monitore a localização da sua carga com ajuda dela mesma, usando nosso
-              SmartBox. 
+              SmartBox.
             </div>
           </article>
         </div>
@@ -262,7 +286,9 @@
                 <div class="box-minimal-icon fa-comments"></div>
               </div>
               <div class="unit-body">
-                <h4 class="box-minimal-title"><a href="https://wa.me/5511947937549?text=Olá, venho através do site e estou com algumas duvidas, poderia me ajudar por gentileza?">Orçamento grátis </a></h4>
+                <h4 class="box-minimal-title"><a
+                    href="https://wa.me/5511947937549?text=Olá, venho através do site e estou com algumas duvidas, poderia me ajudar por gentileza?">Orçamento
+                    grátis </a></h4>
                 <div class="box-minimal-text">Fale com um de nossos especialista e garanta a melhor qualidade do mercado
                   com redução de custos.</div>
               </div>
@@ -276,7 +302,7 @@
                 <div class="box-minimal-icon fa-group"></div>
               </div>
               <div class="unit-body">
-                <h4 class="box-minimal-title"><a >Time de qualidade</a></h4>
+                <h4 class="box-minimal-title"><a>Time de qualidade</a></h4>
                 <div class="box-minimal-text">Garantimos atendimento de ponta a ponta, desde o inicio da negociação até
                   o pós venda.</div>
               </div>
@@ -290,7 +316,7 @@
                 <div class="box-minimal-icon fa-calendar-o"></div>
               </div>
               <div class="unit-body">
-                <h4 class="box-minimal-title"><a >Monitoramento o ano todo 24/7</a></h4>
+                <h4 class="box-minimal-title"><a>Monitoramento o ano todo 24/7</a></h4>
                 <div class="box-minimal-text">Nosso HUB exclusivo garante um posicionamento preciso e estavel todos os
                   dias do ano 24/7.</div>
               </div>
@@ -304,7 +330,7 @@
                 <div class="box-minimal-icon fa-thumbs-up"></div>
               </div>
               <div class="unit-body">
-                <h4 class="box-minimal-title"><a >99% Dos clientes satisfeitos</a></h4>
+                <h4 class="box-minimal-title"><a>99% Dos clientes satisfeitos</a></h4>
                 <div class="box-minimal-text">Com intuito de manter e aprimorar a qualidade dos nossos produtos e
                   serviços, a Autotrac desenvolveu um Sistema de Gestão da Qualidade para garantir a satisfação dos
                   clientes e o comprometimento de todos os colaboradores com os objetivos da organização, obtendo,
@@ -502,7 +528,8 @@
                     <div class="info-classic-icon fa-whatsapp"></div>
                   </div>
                   <div class="unit-body"><a class="info-classic-link"
-                      href="https://wa.me/551150392512?text=Olá, venho através do site e estou com algumas duvidas, poderia me ajudar por gentileza?">Contato WhatsApp</a></div>
+                      href="https://wa.me/551150392512?text=Olá, venho através do site e estou com algumas duvidas, poderia me ajudar por gentileza?">Contato
+                      WhatsApp</a></div>
                 </div>
               </article>
             </div>
@@ -510,6 +537,52 @@
         </div>
       </div>
     </div>
+    <div id="cookieBanner">
+      Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
+      <button onclick="aceitarCookies()">Aceitar</button>
+  </div>
+
+  <script>
+      // Função para definir um cookie de aceitação
+      function setCookie(name, value, days) {
+          var expires = "";
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + value + expires + "; path=/";
+      }
+
+      // Função para ocultar a barra de cookies e definir o cookie de aceitação
+      function aceitarCookies() {
+          document.getElementById("cookieBanner").style.display = "none";
+          setCookie("cookieAceito", "true", 365); // O cookie é válido por 365 dias
+      }
+
+      // Verificar se o cookie de aceitação já está definido
+      function verificaCookieAceito() {
+          var cookieAceito = getCookie("cookieAceito");
+          if (!cookieAceito || cookieAceito !== "true") {
+              document.getElementById("cookieBanner").style.display = "block";
+          }
+      }
+
+      // Função para obter o valor de um cookie
+      function getCookie(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+              if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+      }
+
+      // Executar a verificação ao carregar a página
+      verificaCookieAceito();
+  </script>
   </section>
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -527,7 +600,7 @@
   <footer class="section footer-classic">
     <div class="container">
       <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>ABCTARC
-          Autorizada Autotrac</span><span>.&nbsp;</span><a href="#">Privacy Policy</a>. Design&nbsp;by&nbsp;<a
+          Autorizada Autotrac</span><span>.&nbsp;</span><a href="../privacy-policy/legald52d.html">&nbsp;Privacy Policy.</a><a href="../privacy-policy/cookie-policy.html">&nbsp;Cookies Policy.</a><a href="../privacy-policy/legal.html">&nbsp;legal</a>. Design&nbsp;by&nbsp;<a
           href="#">Kayki Macedo</a></p>
     </div>
   </footer>
