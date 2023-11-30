@@ -146,15 +146,15 @@
                   <li class="rd-nav-item"><a class="rd-nav-link" href="">Uso Pessoal<a>
                         <ul class="rd-menu rd-navbar-dropdown">
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                              href="../uso-pessoal/produto.html">Autotrac One Carro</a>
+                              href="../uso-pessoal/one-carro.html">Autotrac One Carro</a>
                           </li>
-                          <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
-                              produto</a>
+                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" 
+                              href="../uso-pessoal/one-moto.html">Autotrac One Moto</a>
                           </li>
-                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
-                              produto</a>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" 
+                              href="../uso-pessoal/one-mini.html">Autotrac One Mini</a>
                           </li>
-                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
+                          <!--<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="link da pag.html">nome do
                               produto</a>
                           </li>-->
                         </ul>
@@ -537,10 +537,20 @@
         </div>
       </div>
     </div>
-    <div id="cookieBanner">
-      Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
-      <button onclick="aceitarCookies()">Aceitar</button>
-  </div>
+    <style>
+      #cookieBanner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+    
+    <div class="swiper-wrapper" id="cookieBanner">
+      <p class="text-center">Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
+      <button onclick="aceitarCookies()">Aceitar</button></p>
+    </div>
+    
+  
 
   <script>
       // Função para definir um cookie de aceitação
