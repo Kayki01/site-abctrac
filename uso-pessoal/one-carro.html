@@ -10,6 +10,28 @@
   <link rel="stylesheet" type="../text/css" href="//fonts.googleapis.com/css?family=Roboto:400,500">
   <link rel="stylesheet" href="../css/style.css">
   <style>
+        #cookieBanner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #cookieBanner button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
     .ie-panel {
       display: none;
       background: #212121;
@@ -219,47 +241,110 @@
             <h3 class="text-center"> A melhor tecnologia de rastreamento veicular 24h por dia,
               direto do seu celular ou tablet.</h3>
           </div>
-          <div class="text-left"></div>
-          <h4>O rastreador veicular Autotrac One Carro usa a tecnologia mais
-            confiável. A transmissão de dados é feita por GPRS (rede celular
-            GSM), e o posicionamento é acompanhado via GPS (sistema de
-            posicionamento global por satélite) por tempo e mudança de curso
-            (curva, retorno ou alteração no sentido de deslocamento). O sistema
-            é composto de duas partes, o rastreador veicular, que é instalado
-            no carro, e um aplicativo para smartphones e tablets, para seu
-            acesso móvel imediato.
-            Você pode definir, em um mapa, a região onde seu veículo
-            normalmente circula (cerca eletrônica), também pode fazer o
+          <div class="text-left">
+          O rastreador veicular Autotrac One Carro usa a tecnologia mais
+            confiável. <br>
+            transmissão de dados é feita por GPRS (rede celular
+            GSM), e o posicionamento<br>
+            é acompanhado via GPS (sistema de
+            posicionamento global por satélite)<br>
+            por tempo e mudança de curso
+            (curva, retorno ou alteração no sentido de<br>
+            deslocamento). O sistema é composto de duas partes, o rastreador veicular,<br>
+            que é instalado no carro, e um aplicativo para smartphones e tablets,<br>
+            para seu acesso móvel imediato.
+            Você pode definir, em um mapa, a região<br>
+            onde seu veículo normalmente circula (cerca eletrônica), também pode fazer o<br>
             check-in em um determinado lugar (registrar sua chegada) e
-            configurar os avisos ou alertas do sistema.</h4>
+            configurar os avisos<br> ou alertas do sistema. 
+          </div>
+         
+          <img src="../images/mao-celular.jpg" alt="" width="420" height="420" class="margem-esquerda-10">
         </div>
       </div>
+   </div>
   </div>
+  <style>
+    #cookieBanner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+  
+  <div class="swiper-wrapper" id="cookieBanner">
+    <p class="text-center">Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
+    <button onclick="aceitarCookies()">Aceitar</button></p>
   </div>
+  
 
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/6548d802f2439e1631ec26b2/1hei8nirk';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
-  <footer class="section footer-classic">
-    <div class="container">
-      <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>ABCTRAC
-        </span><span>.&nbsp;</span><a href="#">Privacy Policy</a>. Design&nbsp;by&nbsp;<a>Kayki Macedo</a></p>
-    </div>
-  </footer>
+
+<script>
+    // Função para definir um cookie de aceitação
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Função para ocultar a barra de cookies e definir o cookie de aceitação
+    function aceitarCookies() {
+        document.getElementById("cookieBanner").style.display = "none";
+        setCookie("cookieAceito", "true", 365); // O cookie é válido por 365 dias
+    }
+
+    // Verificar se o cookie de aceitação já está definido
+    function verificaCookieAceito() {
+        var cookieAceito = getCookie("cookieAceito");
+        if (!cookieAceito || cookieAceito !== "true") {
+            document.getElementById("cookieBanner").style.display = "block";
+        }
+    }
+
+    // Função para obter o valor de um cookie
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Executar a verificação ao carregar a página
+    verificaCookieAceito();
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6548d802f2439e1631ec26b2/1hei8nirk';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+<!--End of Tawk.to Script-->
+<footer class="section footer-classic">
+  <div class="container">
+    <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>ABCTARC
+        Autorizada Autotrac</span><span>.&nbsp;</span><a href="../privacy-policy/legald52d.html">&nbsp;Privacy Policy.</a><a href="../privacy-policy/cookie-policy.html">&nbsp;Cookies Policy.</a><a href="../privacy-policy/legal.html">&nbsp;legal</a>. Design&nbsp;by&nbsp;<a
+        href="#">Kayki Macedo</a></p>
   </div>
-  <div class="snackbars" id="form-output-global"></div>
-  <script src="../js/core.min.js"></script>
-  <script src="../js/script.js"></script>
+</footer>
+</div>
+<div class="snackbars" id="form-output-global"></div>
+<script src="../js/core.min.js"></script>
+<script src="../js/script.js"></script>
 </body>
 
 </html>

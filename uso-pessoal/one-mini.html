@@ -10,6 +10,28 @@
   <link rel="stylesheet" type="../text/css" href="//fonts.googleapis.com/css?family=Roboto:400,500">
   <link rel="stylesheet" href="../css/style.css">
   <style>
+        #cookieBanner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #cookieBanner button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
     .ie-panel {
       display: none;
       background: #212121;
@@ -212,44 +234,115 @@
                       onClick="window.open('https://wa.me/+5511918426860?text=Olá, venho através do site, e estou interessado(a) no ONE para carros, poderia me ajudar por gentileza?','mywindow','width=640,height=600')"
                       type="button">
                     </li>
-                </div>
-              </article>
-              <div class="col-md-6">
-                <!--<h3 width="200"> A melhor tecnologia de rastreamento veicular 24h por dia,
-                  direto do seu celular ou tablet.</h3> -->
-
+                  </div>
+  
+                </article>
               </div>
-
-
+              <h3 class="text-center"> A melhor tecnologia de rastreamento veicular 24h por dia,
+                direto do seu celular ou tablet.</h3>
             </div>
+            <div class="text-left">
+              O rastreador GPS Autotrac Mini pode ser despachado com<br>
+              bagagens para monitorar seu percurso no território brasileiro, ser<br>
+              carregado por você ou por seu filho, na mochila. Compre o<br>
+              localizador Autotrac Mini e tenha acesso fácil a rotas e alertas de<br>
+              objetos e pessoas queridas! A melhor tecnologia e a melhor<br>
+              assistência para dar a você muito mais tranquilidade<br>
+              Assim como no Autotrac One para carros e motos, no Autotrac Mini,<br>
+              a transmissão de dados é feita por meio da rede GPRS, e o<br>
+              posicionamento do que é rastreado é acompanhado pelo sistema de<br>
+              GPS. Basta carregá-lo no bolso ou colocá-lo no objeto, na bagagem<br>
+              ou no que pretende monitorar.
+              Não recomendado para uso veicular.
+            </div>
+           
+            <img src="../images/mao-celular.jpg" alt="" width="420" height="420" class="margem-esquerda-10">
           </div>
         </div>
-      </div>
-  </div>
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/6548d802f2439e1631ec26b2/1hei8nirk';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
-  <footer class="section footer-classic">
-    <div class="container">
-      <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>ABCTRAC
-        </span><span>.&nbsp;</span><a href="#">Privacy Policy</a>. Design&nbsp;by&nbsp;<a>Kayki Macedo</a></p>
+     </div>
     </div>
-  </footer>
+
+    <style>
+    #cookieBanner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+  
+  <div class="swiper-wrapper" id="cookieBanner">
+    <p class="text-center">Este site utiliza cookies. Ao continuar a navegar, você concorda com o uso de cookies.
+    <button onclick="aceitarCookies()">Aceitar</button></p>
   </div>
-  <div class="snackbars" id="form-output-global"></div>
-  <script src="../js/core.min.js"></script>
-  <script src="../js/script.js"></script>
+  
+
+
+<script>
+    // Função para definir um cookie de aceitação
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Função para ocultar a barra de cookies e definir o cookie de aceitação
+    function aceitarCookies() {
+        document.getElementById("cookieBanner").style.display = "none";
+        setCookie("cookieAceito", "true", 365); // O cookie é válido por 365 dias
+    }
+
+    // Verificar se o cookie de aceitação já está definido
+    function verificaCookieAceito() {
+        var cookieAceito = getCookie("cookieAceito");
+        if (!cookieAceito || cookieAceito !== "true") {
+            document.getElementById("cookieBanner").style.display = "block";
+        }
+    }
+
+    // Função para obter o valor de um cookie
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Executar a verificação ao carregar a página
+    verificaCookieAceito();
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6548d802f2439e1631ec26b2/1hei8nirk';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+<!--End of Tawk.to Script-->
+<footer class="section footer-classic">
+  <div class="container">
+    <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>ABCTARC
+        Autorizada Autotrac</span><span>.&nbsp;</span><a href="../privacy-policy/legald52d.html">&nbsp;Privacy Policy.</a><a href="../privacy-policy/cookie-policy.html">&nbsp;Cookies Policy.</a><a href="../privacy-policy/legal.html">&nbsp;legal</a>. Design&nbsp;by&nbsp;<a
+        href="#">Kayki Macedo</a></p>
+  </div>
+</footer>
+</div>
+<div class="snackbars" id="form-output-global"></div>
+<script src="../js/core.min.js"></script>
+<script src="../js/script.js"></script>
 </body>
 
 </html>
