@@ -271,82 +271,14 @@
         <div class="container">
           <h3>Entre em contato</h3>
           <!--RD Mailform-->
-          <form id="contato" action="https://formsubmit.co/kayki.macedo@abctrac.com.br" method="POST" class="form">
-            <div class="row row-30">
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-name">Seu nome:</label>
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-phone">Telefone:</label>
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-email">E-mail:</label>
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-message">Menssagem</label>
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="form-button">
-              <button class="button button-primary" type="submit">Enviar Menssagem</button>
-            </div>
-          </form>
         </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            // Aguarde o DOM ser totalmente carregado
-      
-            // Obtenha o formulário pelo ID
-            var formulario = document.getElementById('contato');
-      
-            // Adicione um ouvinte de evento para o evento de envio do formulário
-            formulario.addEventListener('submit', function (event) {
-              // Impedir o envio padrão do formulário
-              event.preventDefault();
-      
-              // Lógica de validação do formulário
-              if (validateForm()) {
-                // Se os campos forem válidos, exiba um alerta de agradecimento
-                alert('Obrigado pelo contato, retonaremos o mais breve possivel!');
-      
-                // Aguarde 2 segundos e redirecione o usuário para a página inicial
-                setTimeout(function () {
-                  window.location.href = 'index.html';
-                }, 2000);
-              }
-            });
-      
-            // Função de validação do formulário
-            function validateForm() {
-              const nome = document.getElementById('contact-name').value;
-              const telefone = document.getElementById('contact-phone').value;
-              const email = document.getElementById('contact-email').value;
-              const mensagem = document.getElementById('contact-message').value;
-      
-              // Adicione suas regras de validação aqui
-              // Por exemplo, verifique se os campos obrigatórios foram preenchidos
-      
-              if (nome && telefone && email && mensagem) {
-                return true; // Formulário válido
-              } else {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return false; // Formulário inválido
-              }
-            }
-          });
+
+      <script data-b24-form="inline/1/y4dbaf" data-skip-moving="true">
+        (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn.bitrix24.com.br/b26300449/crm/form/loader_1.js');
         </script>
-      
         <style>
 
           #cookieBanner {
