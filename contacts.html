@@ -303,7 +303,50 @@
             </div>
           </form>
         </div>
-        
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            // Aguarde o DOM ser totalmente carregado
+      
+            // Obtenha o formulário pelo ID
+            var formulario = document.getElementById('contato');
+      
+            // Adicione um ouvinte de evento para o evento de envio do formulário
+            formulario.addEventListener('submit', function (event) {
+              // Impedir o envio padrão do formulário
+              event.preventDefault();
+      
+              // Lógica de validação do formulário
+              if (validateForm()) {
+                // Se os campos forem válidos, exiba um alerta de agradecimento
+                alert('Obrigado pelo contato, retonaremos o mais breve possivel!');
+      
+                // Aguarde 2 segundos e redirecione o usuário para a página inicial
+                setTimeout(function () {
+                  window.location.href = 'index.html';
+                }, 2000);
+              }
+            });
+      
+            // Função de validação do formulário
+            function validateForm() {
+              const nome = document.getElementById('contact-name').value;
+              const telefone = document.getElementById('contact-phone').value;
+              const email = document.getElementById('contact-email').value;
+              const mensagem = document.getElementById('contact-message').value;
+      
+              // Adicione suas regras de validação aqui
+              // Por exemplo, verifique se os campos obrigatórios foram preenchidos
+      
+              if (nome && telefone && email && mensagem) {
+                return true; // Formulário válido
+              } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return false; // Formulário inválido
+              }
+            }
+          });
+        </script>
+      
         <style>
 
           #cookieBanner {
